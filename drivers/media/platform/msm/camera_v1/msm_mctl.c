@@ -430,10 +430,10 @@ static int msm_mctl_cmd(struct msm_cam_media_controller *p_mctl,
 			core, ioctl, VIDIOC_MSM_ISPIF_CFG, argp);
 		break;
 	default:
-		if ((p_mctl) && (p_mctl->isp_sdev) && (p_mctl->isp_sdev->isp_config)) {
-			/* ISP config*/
-			D("%s:%d: go to default. Calling msm_isp_config\n",
-				__func__, __LINE__);
+		/* ISP config*/
+		D("%s:%d: go to default. Calling msm_isp_config\n",
+			__func__, __LINE__);
+		if ((p_mctl) && (p_mctl->isp_sdev) && (p_mctl->isp_sdev->isp_config))
 			rc = p_mctl->isp_sdev->isp_config(p_mctl, cmd, arg);
 		break;
 	}
