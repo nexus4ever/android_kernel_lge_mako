@@ -358,6 +358,7 @@ struct msm_pp_frame
   uint32_t inst_handle;
 };
 
+#ifdef CONFIG_MSM_CAMERA
 struct msm_pp_crop
 {
   uint32_t src_x;
@@ -380,6 +381,7 @@ struct msm_mctl_pp_frame_cmd
   struct msm_pp_crop crop;
   int path;
 };
+#endif
 
 struct msm_cam_evt_divert_frame
 {
