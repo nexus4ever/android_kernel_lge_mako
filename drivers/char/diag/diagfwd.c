@@ -1552,8 +1552,8 @@ void diagfwd_init(void)
 	kmemleak_not_leak(driver->hdlc_buf);
 	if (driver->user_space_data == NULL)
 		driver->user_space_data = kzalloc(USER_SPACE_DATA, GFP_KERNEL);
-		if (driver->user_space_data == NULL)
-			goto err;
+	if (driver->user_space_data == NULL)
+		goto err;
 	kmemleak_not_leak(driver->user_space_data);
 	if (driver->client_map == NULL &&
 	    (driver->client_map = kzalloc
